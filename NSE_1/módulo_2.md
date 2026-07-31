@@ -5,7 +5,7 @@ Conhecendo o panorama de ameaças digitais nos dá uma perspectiva sobre os prin
 Pessoas (hackers) que, através de um computador, tenta te impedir de usar um computador ou acessar informações que você está autorizado e que está armazenado ou em trânsito entre dispositivos.
 - Tipos de agentes - Não são um grupo homogênio.:
     - Explorador - o curioso: Esse tipo de agente não tem maldade, mas uma busca por notoriedade, mostrar que consegue furar bloqueios de segurança. Tem curiosidade em buscar falhas de seguranças nas aplicações, e o principal método hack é o Phishing que tem 3 variantes:
-        - Spear phishing (pesca com lança): utilizado por e-mails com links mal intencionados
+        - Spear phishing (pesca com lança): utiliza e-mails com links mal intencionados
         - Smishing - utiliza a mesma forma de ataque, por mensagens de texto ou SMS
         - Vishing: por ligação, utilizando VoIP e alterando o ID da ligação, para parecer uma empresa legítima;
     
