@@ -43,3 +43,21 @@ São categorias distinguidas por cores:
     7. Exfiltração (coleta e envio de dados): A extração de dados sensíveis do alvo, copiando para um servidor remoto, ou usar o sistema comprometido para lançar ataques a outros alvos.
     As limitações do framework vem da presunção de que os ataques são de origem externas e que reforça a utilização de métodos de defesas tradicionais.
 - MITRE ATT&CK: Criado em 2013, a empresa MITRE publicou as táticas, técnicas e conhecimento comum de adversários (Adversarial Tatics, Techniques & Common Knowledge), parecido com o Cyber Kill Chain, ajuda a entender a metodologia dos ataques, porém, está em constante desenvolvimento. Possui uma matriz que descreve táticas específicas e métodos usados para comprometer sistemas e roubar e manipular informações. As técnicas são agrupadas por categorias baseadas no tipo de ataque ou atividade que estão sendo utilizadas. Um dos benefícios da matriz é a a linguagem comum e a disponibilização do framwork para analisar e discutir sobre as ameaças.
+
+## Alertas de surtos e advises
+- Para ter um melhor desempenho em manter seu sistema seguro, é importante que:
+    - Se manter atualizado sobre as últimas vulnerabilidades e ataques detectados;
+    - Revisar relatórios de vulnerabilidade e exposições comuns (CVE - em inglês);
+    - Consultar sites confiáveis de cibersegurança (públicos e privados);
+    - Contratar serviços de empresas especializadas em cibersegurança;
+- **Serviços de alerta de surtos**:
+    - Identifica gaps de segurança e fraquezas;
+    - Reune informações das ameaças, através de:
+        - Sensores de ameaças global;
+        - Análise de malware:
+            - Equipe de peritos que estudam os malwares;
+            -  Utilização de IA para análise preditiva.
+- Um alerta de surto contém:
+    - Uma narrativa do ataque, sua linha do tempo (timeline) e tecnologias afetadas.
+    - Uma lista abrangente de soluções e assinaturas para quebrar a sequência do ataque e ferramentas para threat hunting (caça a ameaças).
+    - Uma lista de recursos e pesquisas relacionadas.
