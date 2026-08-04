@@ -28,3 +28,18 @@ São categorias distinguidas por cores:
 - Grey hat: hacker que ataca redes, infringindo leis, mas não tem a mesma inteção do black hat. Se alinha com a categoria explorador
 - Blue hat: variante do white hat, hacker que presta serviços de consultoria para terceiros, para testar futuros lançamentos e previnir possíveis falhas de segurança.
 
+-----------------------------------
+**lessons que não subiram**
+------------------------------------
+## Frameworks de ataque
+
+- Cyber kill chain: Desenvolvido pela Lockheed Martin em 2011, com 7 estágios de um ataque cibernético:
+    1. Reconhecimento: reune informações sobre o alvo, utilizando ferramentas como redes sociais e mecanismos de busca;
+    2. Armamento: Criação da carga explosiva (códigos maliciosos ou softwares) que irão infectar o alvo, que podem, por exemplo, ser transportado através de um arquivo .doc, enviado por um e-mail de phishing;
+    3. Entrega: Como o nome sugere, é o ato de enviar a carga para seu destinatário, que pode ser usado o método de engenharia social ou uma vulnerabilidade em um site;
+    4. Exploração: É a utilização da carga para ganhar acesso ao sistema e obter vantagens das vulnerabilidades dos sistemas ou da rede;
+    5. Instalação: É o processo de instalação de um software que é usado para ganhar e manter o controle do sistema, mesmo que a carga seja detectada e deletada ;
+    6. Controle e comando: É o estabelecimento da comunicação com o sistema que foi comprometido, e pode envolver um servidor C&C ou outros meior de comunicação;
+    7. Exfiltração (coleta e envio de dados): A extração de dados sensíveis do alvo, copiando para um servidor remoto, ou usar o sistema comprometido para lançar ataques a outros alvos.
+    As limitações do framework vem da presunção de que os ataques são de origem externas e que reforça a utilização de métodos de defesas tradicionais.
+- MITRE ATT&CK: Criado em 2013, a empresa MITRE publicou as táticas, técnicas e conhecimento comum de adversários (Adversarial Tatics, Techniques & Common Knowledge), parecido com o Cyber Kill Chain, ajuda a entender a metodologia dos ataques, porém, está em constante desenvolvimento. Possui uma matriz que descreve táticas específicas e métodos usados para comprometer sistemas e roubar e manipular informações. As técnicas são agrupadas por categorias baseadas no tipo de ataque ou atividade que estão sendo utilizadas. Um dos benefícios da matriz é a a linguagem comum e a disponibilização do framwork para analisar e discutir sobre as ameaças.
