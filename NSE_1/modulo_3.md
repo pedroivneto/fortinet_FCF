@@ -26,7 +26,7 @@
 - Pretexting: Uma situação ou pretexto é criada para levar o alvo a tomar uma ação de forma emocional.
 - Scareware: instiga o medo através de informação falsa, como anúncios que informam que seu dispositivo está infectado e oferta um software de proteção gratuito - conhecido como rogue attack também;
 - Watering hole (goteira): foca em sites que os alvos visitam com frequência;
-Tallgating: Explora convenções sociais para obter acesso físico a locais com acesso controlado.
+- Tallgating: Explora convenções sociais para obter acesso físico a locais com acesso controlado.
 - Honeypot trap (armadilha do pote de mel): Utilizam de armadilhas para atrair e criar brechas na segurança - pode ser realizado inversamente, onde o time de segurança cria ambientes atrativos para ataques, e aprende como determinados grupos trabalham.
 
 ## Ameaça interna
