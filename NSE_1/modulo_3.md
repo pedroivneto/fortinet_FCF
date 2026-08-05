@@ -50,3 +50,21 @@ Tallgating: Explora convenções sociais para obter acesso físico a locais com 
     - Shoulder surfing (surfista de ombro): se utiliza de técnicas de observação, como olhar por cima do ombro de alguém, para obter informações;
     - Dumpster diving (mergulho no lixo): procura por informações no lixo ou lixeira, ou na sala de impressões confidenciais;
     - Eavesdropping (escutar atrás da parede): fisicamente é ouvir uma conversa confidencial e digitalmente, se refere a buscar informações através das conexões de rede.
+
+## Fraudes, esquemas e campanhas de influência
+- Cyber-fraude: técnica de engenharia social, malware e outros dipos de dissimulação usados para fraudar ou tirar vantagem financeira de uma pessoa ou organização.
+- Cyber-scams (esquemas cibernéticos): São um tipo de fraude, porém é geralmente classificado como uma fraude pequena ou uma fraude cibernética não tão séria.
+- Os maus agentes se utilizam dos mesmos vetores de ameaças e métodos que já foram vistos anteriormente.
+- Exemplos de fraudes ou esquemas:
+    - Copycat government websites (imitação de sites do governo): através de phishing, fornecem um link para um site falso do governo, com a intenção de roubar credenciais ou informações do cartão de crédito do alvo;
+    - Dating & romance scams (esquema de encontros e romance): criam sites legítimos de namoro, redes sociais, chat rooms para conseguir detalhes pessoais ou dinheiro dos alvos;
+    - Holiday fraud (fraude do feriado): o criminoso realiza vendas de pacotes de férias que não tem vagas disponíveis ou não existem;
+    - Mandate fraud (fraude do débito bancário): ocorre quando uma transação de e-mail é hackeada, como um entre um vendedor e um comprador, e o hacker envia uma conta com suas informações bancárias, solicitando o pagamento do boleto;
+    - Pharming (colheira): redireciona um tráfego de um site legítimo para um falso, como um e-commerce ou site de banco;
+    - Greeting card scams (esquema de cartões de felicitações): é realizado com o envio de um cartão de felicitação com material malicioso, nos aniversários, ou em feriados importantes como Natal e Páscoa.
+- Campanha de influência: esforços em larga escala para mudar a opnião pública. Essas campanhas geralmente são executadas de má fé e procuram promover uma narrativa falsa. Os passos para criar uma campanha de influência são:
+    1. Criação de contas falsas em plataformas de mídia;
+    2. Criação do conteúdo que irá manter a narrativa;
+    3. O conteúdo é postado com os usuários falsos em inúmeras mídias sociais;
+    4. Pessoas reais veêm o conteúdo e começam a compartilhar;
+    5. Após chegar a um limite, as mídias em massa amplificam o conteúdo da mensagem, reforçando a narrativa.
