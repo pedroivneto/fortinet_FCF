@@ -55,3 +55,20 @@
     - Rogueware/Scareware: engana o usuário com informação falsa (como um pop-up informando que o computador está infectado), e oferece a solução, um ativírus (pago ou grátis), ao qual o usuário, por medo, baixa o arquivo, que na verdade é um malware;
     - Botnet malware: controla o hospedeiro através de um servidor C&C (command and control). O nome de um dispositivo infectado é bot ou robot, e uma coleção de dispositivos infectados é chamado de botnet;
     - Cryptojacking: uso ilegal de recursos para minerar moedas crypto. O hacker usa um malware ou script para sequestrar um computador e usa seus recursos para minerar cryptocurency
+
+## Diferença entre vetor de ataque e superfície de ataque
+- O vetor de ataque é o método usado para atacar um alvo;
+- A superfície de ataque representa o número total de pontos de entrada que o vetor cria para conseguir o acesso. Pode aumentar ou reduzir devido as circunstâncias.
+- Malware Attack Vectors:
+    - Watering holes attacks (goteira):
+        - A vulnerabilidade é o usuário;
+        - O caminho são as mídias sociais;
+        - O mecanismo é o malware.
+- Mecanismos de vetores de ataque:
+    - Backdoor (porta dos fundos): Uma maneira não autorizada de conseguir acesso ao sistema do computador;
+    - Logic bomb (bomba lógica): Um pedaço de código malicioso deixado em um computador que irá executar sob condições específicas;
+    - Easter egg (surpresa): Um recurso escondido ou código que pode deixar dados e redes expostas;
+    - Droppers: Programas que extraem arquivos, normalmente arquivos maliciosos, para um computador;
+    - Downloader: Um cavalo de Tróia que se auto-instala e usa a internet para baixar malwares;
+    - Shellcode: Código com instruções que tomam o controle do computador e o expõem;
+    - Code injection (injeção de código): termo usado para ataques que injetam códigos em uma aplicação. O código injetado é interpretado pela aplicação e muda a forma como o programa é executado.
