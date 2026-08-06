@@ -22,7 +22,7 @@
 
 ## Tipos de malware
 - Virus: segundo a Norton, "Um vírus de computador é um tipo de código ou programa malicioso escrito para alterar a forma como um computador opera e que é projetado para se espalhar de um computador para outro."
-- O vírus se anexa ao um programa ou um documento que suporta a execução de macros, para que o código do vírus seja rodado. Os traços de um vírus são:
+- O vírus se anexa a um programa ou um documento que suporta a execução de macros, para que o código do vírus seja rodado. Os traços de um vírus são:
     - Deve ser acionado por um usuário;
     - Ele se anexam a aplicações;
     - São criados para se espalhar para outros dispositivos na rede.
