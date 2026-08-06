@@ -25,4 +25,72 @@
     - Sem um computador, é impossível quebrar usando força bruta (é o método de tentativa e erro).
 - Existem 2 tipos de cifras usadas por computadores:
     - Stream: encripta uma sequência de texto bit ou byte por vez. Exemplos de cifras Stream são FISH e RC4 (Rivest Cipher);
-    - Block: encripta a informação do texto em blocos. O tamanho do block depende do tamanho da chave. Se a chave tem tamanho de 256 bits, o bloco também terá tamanho de 256 bits. Exemplos dessa cifra são DES (Data Encryption Standart), 3DES1, AES (Advanced Encryption Standard) e Blowfish
+    - Block: encripta a informação do texto em blocos. O tamanho do block depende do tamanho da chave. Se a chave tem tamanho de 256 bits, o bloco também terá tamanho de 256 bits. Exemplos dessa cifra são DES (Data Encryption Standart), 3DES1, AES (Advanced Encryption Standard) e Blowfish.
+
+## Aula 2 - Chaves e algoritmos de criptografia
+- Uma chave digital é um valor, que pode ser expressado alfanuméricamente, que é usado para operações criptograficas. Podem ser usadas como:
+    - Assinatura digital;
+    - Código de autenticação de mensagem (MAC);
+    - Encriptação:
+        - Fluxo de informação entre 2 dispositivos;
+        - Grande volume de dados estáticos;
+        - Pequeno volume de dados, como uma chave digital.
+- As chaves podem ser de 2 tipos:
+    - Pública:
+    - Privada.
+
+### Tamanhos e Força das Chaves (*Key Lengths and Strengths*)
+
+| Característica | Chave Grande (Assimétrica)<br>`1024 bits ou mais` | Chave Pequena (Simétrica)<br>`128 a 256 bits` |
+| :--- | :--- | :--- |
+| **Criptografia** | Criptografa pequenas quantidades de dados | Criptografa grandes volumes de dados (*bulk data*) |
+| **Uso / Aplicação** | Transferência de chaves e assinaturas digitais | Fluxos contínuos de dados ou grandes volumes onde a performance é crítica |
+| **Força / Segurança** | **Tamanho (Comprimento)** + **Complexidade** | **Tamanho (Comprimento)** + **Complexidade** |
+
+---
+
+#### Fórmula da Força da Chave
+
+**Força da Chave** = **Tamanho (Comprimento)** + **Complexidade**
+
+* **Apenas dígitos:** `10.000.000.000` combinações possíveis.
+* **Dígitos + Letras maiúsculas e minúsculas:** `218.000.000.000.000` combinações possíveis.
+
+- Alongamento de chave: é um processo que aumenta o tamanho da chave, onde pegamos uma senha e jogamos em um tipo de algoritmo hashing para produzir uma senha mais forte.
+- Exemplo de algoritmo: Password-Based Key Derivation Function Two (PBKDF2) e BCRYPT, que é o algoritmo padrão de várias distribuições Linux.
+- O BCRYPT funciona adicionando valores aleatórios - salt - para aumentar a entropia da senha final.
+
+## Algoritimo simétricos e assimétricos
+
+#### Algorítimo simétrico
+- É uma cifra usada para encriptar e descripitar dados usando a mesma chave. Exemplos de algoritmos simétricos são, sendo todos do tipo stream, menos o RC4. O restante são cifras de bloco:
+    - DES (Encriptação padrão de dados);
+    - 3DES;
+    - IDEA (Algoritmo de encriptação de dados internacional);
+    - AES (Padrão de encriptação avançado);
+    - Rivest Cipher (RC4, RC5 e RC6);
+    - Blowfish / Twofish
+- Vantagens:
+    - Encriptação e descriptação mais rápidos que a assimétrica;
+    - Mais eficiente para encriptar e descriptar grandes quantidades de dados.
+- Desvantagens:
+    - A chave permanece em segredo;
+    - Como proteger a chave?.
+
+#### Algorítimo assimétrico
+- É uma cifra que usa um par de chaves matematicamente relacionadas para criptografar operações. Pode fazer todas ou algumas das operações:
+    - Encriptação
+    - Troca de chaves;
+    - Assinatura digitaç;
+- Algoritimos assimétricos e criptografia são conhecidos tambmém como algoritimo de chave pública. Alguns exemplos de algoritimos assimétricos:
+    - Diffle-Hellman;
+    - Rivest, Shamir e Adleman (RSA);
+    - Elliptic Curve Cryptography (ECC);
+    - Pretty Good Privacy (PGP) e (GPG);
+    Digital Signing Algorithm (DSA).
+- Vantagens:
+    - Aumenta a segurança da informação;
+    - Usuários não compartilham suas chaves privadas;
+    - A chave pública encripta e a chave privada decripta;
+- Desvantagem:
+    - As operações de encriptar e decriptar são mais lentos comparados com a criptografia simétrica.
