@@ -40,7 +40,7 @@
     - Mais visibilidade;
 - ZTNA (Zero trust network access / confiança zero ao acesso a rede):
     - estabelece uma sessão segura automaticamente...
-|----
+
 - Befeníficos do ZTS:
     - Sem confiança: precisa provar a identidade através de:
         - MFA;
@@ -60,3 +60,16 @@
     - Controle;
     - Operação;
     - Diagnóstico
+#### Arquitetura de fábrica de dados
+- Provê a possibilidade de monitorar e gerenciar dados e aplicações onde quer que estejam enquando permanecem governados centralmente.
+- Os benefícios do gerenciamento centralizado da seguraça da rede são:
+    - Alto grau de visualização e ampla visibilidade;
+        - Evita problemas de segurança;
+        - Reduz o tempo de resposta a incidentes;
+        - Minimiza interrupções.
+    - Integração de dispositivos: centraliza as definições de configurações e orquestramento de políticas.
+    -  Redução do número de tarefas manuais / repetitivas:
+        - Fácil manutenção;
+        - Melhora na capacidade e performance de predictibilidade;
+        - Fácil auditoria.
+## Aula 5 - Segmentação de rede
