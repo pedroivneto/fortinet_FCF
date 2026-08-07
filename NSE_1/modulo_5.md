@@ -94,3 +94,75 @@
     - A chave pública encripta e a chave privada decripta;
 - Desvantagem:
     - As operações de encriptar e decriptar são mais lentos comparados com a criptografia simétrica.
+
+## Aula 4
+#### Hashing
+- Processo de conversão de uma entrada de qualquer tamanho que gera uma saída de valor único fixo.
+- Existem 3 características de segurança no hashing:
+    - A saída é de tamanho fixo determinado pelo algoritmo, o que nega a obtenção de informações sobre o arquivo;
+    - Cada saída é única, evitando a duplicação (mesmo resultado) para mais de um arquivo (é raro, mas pode acontecer);
+    - O hash não é reversível, logo se você pegar uma saída e tentar realizar o caminho inverso, você não conseguirá, logo não é possível determinar o valor da entrada pelo arquivo de saída
+
+- O uso de hashing e criptografia assimétrica gera o que conhecemos como assinatura digital, que garante a integridade dos dados, autenticação do assinante e a não-repudiação (não existe a possibilidade do assinante negar que não assinou). O processo segue da seguinte maneira:
+    1. O documento a ser assinado passa pelo processo de hashing, gerando um valor de saída, e esse valor de saída é criptografado com a chave privada do assinante;
+    2. A assinatura digital, criado no passo anterior, é gerada e anexada ao documento original de entrada, antes do processo de hashing, gerando assim um documento/dado assinado digitalmente.
+- O processo de verificação de assinatura digital segue da seguinte forma:
+    1. O documento assinado digitalmente passa por um hash, o que irá gerar uma saída;
+    2. A assinatura digital é decriptografada com a chave pública do assinante, gerando o hash original no passo anterior;
+    3. As 2 saídas são comparadas, se elas forem iguais, significa que o documento não foi alterado.
+
+- Tipos de hashing:
+    - Message digest five (MD5 ou MD6);
+    - Secure hashing algorithm one (SHA-1, 2, 3)
+        - SHA-2 inclue SHA-224, SHA-256, SHA-384 e SHA-512;
+        - SHA-3 inclui vários tamanhos de saída.
+    - Microsoft LANMAN
+    - NT LAN Manager Algorithm (NTLM);
+    - HAVAL;
+    - RIPEMD.
+
+## Aula 5
+#### Infraestrutura de chaves públicas
+- Um ecosistema composto de **políticas**, **procedimentos**, **hardware** e **software**, que cria, armazena, usa, distribui e revoga certificados digitais. 4 entidades compõem uma infraestrutura de chaves públicas:
+    - Autoridade certificadora (CA - Certification Authority);
+    - Autoridade registradora (RA - Registration Authorty);
+    - Servidor de diretórios (Directory server);
+    - Usuário final (End entity).
+
+## Aula 6 - Segurança Quântica
+- O que é computação quaântica: Um novo método de cálculo, utilizando os princípios fundamentais da física para resolver problemas extremamente complexos. É usado uma unidade especial chamada qubits para explorar a maior quantidade de possibilidades ao mesmo tempo, permitindo resolver problemas complexos mais rápidos que os computadores atuais.
+- Bits vs Qubits: Bits são unidades básicas de informação, que só podem ser 0 ou 1. Qubits é a unidade básica de informação na computação quântica, onde os estados de 0 e 1 existem em superposição de estados, sendo ambos simultaneamente até ser medido.
+- Superposição: Princípio fundamental da mecânica quântica, que declara que em um sistema quântico pode existir vários estados simultaneamente, até que seja medido. Ex. uma moeda, quando está em sobre uma mesa, ela será cara (0) ou coroa (1). Quando jogamos a moeda, rodando, para cima, ela existe em um estado misto de cara ou coroa (0 ou 1) ao mesmo tempo, até que a coloquemos em cima da mesa (momento da medição).
+- Vantagem quântica: Os qubits em superposição permitem que o computador quântico possa averiguar muitos caminhos de uma vez.
+
+#### QC (Quantum-Criptography) vs PQC (Post-Quantum Criptography)
+- QC - Quantum Criptography:
+    - Fundação: Baseado nos princípios da mecânica quântica para manter a segurança da comunicação;
+    - Limitação: Sua aplicação prática necessita de hardware especializado em mecânica quântica.
+- PQC - Post-Quantum Criptography:
+    -  Fundação: Baseado em novos algoritmos matemáticos criados para resistir a ambos os ataques, tanto da computação classica quando a quântica;
+    - Vangatem: Não requer hardware quântico. Opera nas redes e dispositivos existentes, na escala atual.
+
+#### 4 abordagens para PQC
+- Lattice-based Cryptography: A segurança é baseada na geometria de uma grade de alta dimensão:
+    - Problemas complexos da grade: É praticamente impossível computacionalmente achar o menor vetor em uma grade de alta dimensão;
+    - Complexidade multidimensional: Mais dimensões expandem a busca exponencialmente, tornando a segurança mais forte.
+- Hash-based cryptography: Se baseia na segurança das funções hash, que tem 3 características:
+    - Funções hash de um sentido: Fácil de criar, impossível de reverter;
+    - Mesma entrada = mesma saída: A mesma entrada sempre vai produzir exatamente a mesma saída, todas as vezes;
+    - Efeito avalanche: Se for mudado apenas uma letra sequer, o resultado da saída do hash será totalmente diferente.
+- Code-based cryptography: Baseia-se na dificuldade de decodificar um código linear aleatório corretor de erros:
+    - Problema de difícil decodificação: Decodificar um código linear aleatório sem a chave é intratável;
+    - Padrão escondido: Um usuário autorizado usa uma chave padrão. O agressor vê apenas peças aleatórias;
+    - Eficiente e a prova de futuro: Desde 1978 o modelo de criptografia ainda não foi quebrado, ganhando o recorde de segurança criptográfica de maior tempo.
+- Multivariate Cryptography: Baseado na dificuldade em resolver um sistema de muitas variáveis de equações polinomiais sobre uma quantidade finita de campos:
+    - Equações polinomiais multivariadas: Resolver muitas equações polinomiais sobre corpos finitos é computacionalmente inviável, mesmo para computadores quânticos;
+    - Public Key: Um conjunto de equações polinomiais multivariadas. Qualquer pessoa pode vê-las, mas resolvê-las é o problema difícil;
+    - Private Key: Informação secreta de alçapão (trapdoor) que torna as equações trivialmente solváveis apenas para o usuário legítimo.
+
+- Padronização do PQC: 4 padronizações foram criadas, após anos de estudos e análises:
+    - Criação de chaves: Crystal-Kyber (ML-KEM);
+    - Assinatura digital:
+        - Crystals-Dilithium (ML-DSA);
+        - SHINCS+ (SLH-DSA);
+        - FALCON (FN-DSA).
