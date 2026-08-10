@@ -148,3 +148,38 @@ endereço MAC, ele se torna permanente na CAM table, e só é removido se o swit
 - Usar ACLs (lista de controle de acesso) para endereços não verificados;
 - Adicionar autenticação de porta, IEEE 802.1x;
 - Implementar espelhamento de portas para monitorar suas atividades.
+
+## Aula 8 - Protocolos de segurança
+- São protocolos usados para assegurar uma transação segura de informações. Antes usava-se clear text para a comunicação, hoje existem protocolos de segurança para realizar essas tarefas.
+    - E-mails -  Multipurpose Internet Mail Extentions (MIME) / S/MIME (Secure MIME):
+        - O remetente criptografa a mensagem com a chave pública do destinatário, que utiliza sua chave pública para descriptografar a mensagem;
+        - A assinatura digital provê:
+            - Segurança: por autenticação, não-repudiação e integridade de dados;
+            - Confidencialidade, com o sistema end-to-end.
+    - Navegadores web -  HTTP/HTTPS: Funciona com o TLS (segurança da camada de transporte), que encripta os dados enviados por redes não seguras, como a internet. O processo é feito da seguinte forma:
+        - O servidor web envia sua chave pública após a requisição de conexão, O cliente gera uma chave aleatória e encripta a chave pública recebida e envia ao servidor. O servidor decripta com sua chave privada. A conexão então é assegurada com essa chave simétrica.
+        - MITM (homem do meio / Men in The Middle) é um mecanismo que permite um dispositivo interceptar a comunicação entre o usuário e o servidor, logo a comunicação deixa de ser direta e passa por um dispositivo intermediário.
+    - Controle remoto - Telnet / SSH: É realizado de forma parecida com o TLS, porém o usuário envia sua chave pública, que consta no servidor, que encripta uma mensagem e envia para o cliente, que decripta com sua chave privada e envia a mensagem novamente para o servidor. Se a mensagem for a mesma que foi enviada anteriormente, o link é autorizado. SSH usa:
+        - Diffie-Hellman (DH): permite a troca segura de chaves simétricas através da comunicação usando chaves assimétricas (a chave privada se mantém salva local, enquanto a pública é enviada);
+        - MAC (Message Authentication Code): o algoritmo MAC gera um hash que é anexado a mensagem, para garantir sua integridade e autenticidade.
+    - Acesso remoto - L2TP /IPsec: é um conjunto de protocolos e padrões abertos projetado pela IETF para garantir a segurança, privacidade e integridade das comunicações na camada de rede (Camada 3 do modelo OSI):
+        1. Gatilho: O tráfego de dados chega ao dispositivo de borda (ex: FortiGate/Router) e é identificado como tráfego que deve ser protegido.
+        2. Fase 1 (IKE): Os dispositivos negociam autenticação e criam o canal de controle seguro.
+
+        3. Fase 2 (IKE): Os dispositivos negociam as chaves e políticas para os dados do usuário.
+
+        4. Transferência Segura: Os dados reais são criptografados pelo ESP e transmitidos através do túnel.
+## Aula 9 - Sandbox
+- No contexto de segurança da computação, é um ambiente virtual controlado e a parte da rede, que permite confinar ações de aplicações, como abrir um arquivo Word ou um navegador, evitando a diseminação da ameaça, caso a aplicação esteja infectada
+- Foi criada para a defesa contra ataques do tipo zero-day (dia zero).
+- Existem 3 gerações de sandboxes:
+    - 1ª geração: Era incapaz de compartilhar dados de inteligência com outros dispositivos devido a arquitetura de standalone solutions (se manter por si só), consequentemente, o processo de consolidação e análise da ameaça era desafiadora e com alto consumo de tempo;
+    - 2ª geração: melhora a integração com outros dispositivos de segurança, permitindo o compartilhamento de dados de inteligência;
+    - 3ª geração: é baseado na análise de ameaças padrão da Mitre ATT&CK, linguagem comum usada para identificar, descrever e categorizar ameaças, que podem ser compartilhadas e rapidamente entendidas dispositivos de segurança de outros fabricantes.
+
+## Aula 10 - Ameaças a redes comuns
+- São atividades fora da lei ou maliciosas com a intenção de se aproveitar das vulnerabilidades de uma rede. As ameaças comuns são:
+    - Spoofing: É quando o ator do ataque imita um dispositivo autorizado para roubar dados, espalhar malwares ou passar por sistemas de controle de acesso. Normalmente se troca o endereço MAC ou endereço IP;
+    - Hijacking (sequestro): o agressor intercepta a conexão para descobrir, e potencialmente modificar as partes iniciais da conexão. MITM é um exemplo de hijacking. Modos para mitigar a ameaça é criptografia end-to-end e MFA.
+    - Replay- Attacks: Ao contrário do sequestro, o ataque-replay intercepta uma transmissão válida e repete (ou reenvia) os dados posteriormente, para obter dados ilegalmente. Uma forma de previnir esse ataque é o token de validação única;
+    - 
