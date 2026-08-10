@@ -73,3 +73,78 @@
         - Melhora na capacidade e performance de predictibilidade;
         - Fácil auditoria.
 ## Aula 5 - Segmentação de rede
+- Processo de segmentar uma grande rede em redes menores e isoladas, ajudando a proteger de brechas de segurança e mau funcionamento. As redes são separadas por funções similares, para evitar o vazamento de informações confidenciais;
+- Dispositivos que possuem conexão como mundo exterios (conexão com a internet), ficam em uma segmentação chamada DMZ (Zona Desmilitarizada), onde as informações que saem dessa zona para a internet são classificadas como tráfego norte-sul. Os dispositivos podem se comunicar entre si, já que eles são segmentados novamente, dentro da segmentação, em microsegmentos, chamado de tráfego leste-oeste. Todos os dispositivos estão sob a regra de Zero trust;
+#### Tipos de segmento
+- Físico: Utiliza firewalls e routers, gerando diferentes redes físicas;
+    - A segmentação ocorre na camada física da rede, dividindo a rede principal em subredes;
+    - A segurança das redes é feita por políticas de firewall, ACL (Lista de Cotrole de Acesso) e roteadores (routers);
+- Lógico: Segmentação da rede em diferentes níveis do modelo OSI. Uma forma de segmentação lógica é a criação de redes virtuais, que permite a comunicação dos dispositivos entre si através de switches;
+    - SD-WAN (Software-Defined WAN): trabalha na camada lógica do padrão OSI, e permite a comunicação com a internet utilizando túneis overlays encriptados;
+    - Rede overlay: é uma rede virtualzada construida em cima da uma rede underlay;
+    - Rede underlay: se refere a estrutura física da rede.
+#### Gerenciando segmentos de rede
+- Jumpbox: Dispositivo com acesso controlado avançado, autorização limitada que age como um proxy para os as comunicações entre as segmentações internas. A jumpbox tem monitoramento e registro de log adicional, que envia um alerta para o gerente de TI, informando que foi comprometido;
+- Bastion host: Um computador ou servidor que o propósito é prover acesso da rede privada a uma rede externa. É configurado para se manter contra ataques enquanto permte que usuários acessem subredes, através de uma aplicação.
+#### Benefícios da segmentação
+- Fácil manutenção e configuração;
+- Redução do número de transmissões de broadcast de rede;
+- Minimização de congestionamento de rede;
+- Limita ataques a um segmento específicos;
+- Maior proteção dos dispositivos vulneráveis;
+- Redução do escopo de dispositivos afetados por compliance.
+
+## Aula 6
+- Com o crescimento das redes, houve evolução na proteção das redes, consequentemente, as evoluções dos firewalls, que possuem 4 gerações:
+    - Packet filter/stateless firewall: Examina as informações de rotas e da camada de protocolo, através de políticas de firewall, para fazer verificações de atributos, onde o pacote pode seguir ou não:
+        - Firewall policies podem ser
+            - Implícitas: é uma política aplicada se nenhuma correspondência for encontrada na lista de políticas do firewall;
+            - Explícita: é uma política criada para especificar se o tráfego é permitido ou negado.
+        - Atributos do firewall:
+            - Fonte e endereço de destino da rede;
+            -  Protocolos e números das portas;
+
+    - Stateful firewall: Criado mitigando as falhas da primeira geração, desenvolvendo um critário adicional para bloquear ou permitir o tráfego. Supervisiona a todo momento as conexões, através do estado da conexão e das 5 tuplas.
+        - 5 tuplas:
+            - Endereço de IP e número da porta da fonte;
+            - Endereço de IP e número da porta do destino;
+
+    - Third-generation firewall (3ª geração): Para mitigar a brecha que o protocolo HTTP promove na 2ª geração, a 3ª verifica a carga dos dados, o estado mais uma aplicação de filtro de camada, e combina com a proteção de antivírus, antispam, IPS (Intrusion Preventiion System - Sistema de Prevenção de Intrusão) e VPN (Virtual Private Network - Rede Virtual Privada). As camadas filtradas podem ser:
+        - FTP;
+        - DNS;
+        - HTTP:
+            - tráfego do navegador;
+            - blog;
+            - compartilhamento de arquivo;
+            - e-commerce;;
+            - rede social;
+            - VoIP;
+            - e-mail.
+
+    - Next-generetion firewall (NGFW): A 4ª geração de firewalls funcionam como a seguraça de um aeroporto, onde o pacote para por diversos pontos de checagem antes de continuar.
+        - Primeira linha de defesa: checa pacotes e usa decisões baseadas em regras para determinar a permissão ou não do tráfego;
+        - Segunda linha de defesa: Deep Packet Inspection (DPI - inspeção detalhada de pacote): verifica por códigos maliciosos e uso da rede. Também é confirmado se o formato da informação está correto, e dependendo da inspeção, pode ser tomado 4 ações, alerta, bloqueio, alterar rota ou guardar no log;
+        - Terceira linha de defesa: Caso algum código malicioso seja achado, ele é enviado para a caixa de areia (sandbox), para ser analisado futuramente.
+
+## Aula 7 - Portas e Switches
+- Switches são dispositivos da camada de enlace de dados, encaminha pacotes para VLANs baseado na fonte do endereço MAC do pacote. Switches tem uma tabela com as portas, os endereços MAC e as VLANs.
+
+#### Ataque MAC flooding
+- É um ataque com o objetivo de inundar a tabela CAM de switches, causando um potencial DoS (Denial of Service) e vazamento de informações sensíveis.
+- Mac-spoofing é a alteração do endereço MAC de fábrica por outro.
+- Para evitar ataques de MAC flooding é limitar o número de entradas por porta para um.
+- MAC estático: é configurado a uma porta do switch e não é removido automaticamente;
+- Sticky MAC - após o switch identificar o 
+endereço MAC, ele se torna permanente na CAM table, e só é removido se o switch for reiniciado;
+- Autenticação 802.1x - é o padrão designado para autenticar dispositivos que desejam acessar a rede.
+#### Melhores práticas para proteger switches e portas
+- Proteger os switches físicos localmente, e proteger o acesso com:
+    - Autenticação;
+    - Autorização;
+    - Protocolo seguro.
+- Separar os switches para melhor segmentação, como switches de rede interna e externa, previnindo que ambos sejam atacados ao mesmo tempo;
+- Limitar os ataques por inundação limitando a quantidade de MACs permitidos por porta;
+- Configurar MAC estático ou sticky, evitando ataques por MAC spoofing;
+- Usar ACLs (lista de controle de acesso) para endereços não verificados;
+- Adicionar autenticação de porta, IEEE 802.1x;
+- Implementar espelhamento de portas para monitorar suas atividades.
