@@ -182,4 +182,79 @@ endereço MAC, ele se torna permanente na CAM table, e só é removido se o swit
     - Spoofing: É quando o ator do ataque imita um dispositivo autorizado para roubar dados, espalhar malwares ou passar por sistemas de controle de acesso. Normalmente se troca o endereço MAC ou endereço IP;
     - Hijacking (sequestro): o agressor intercepta a conexão para descobrir, e potencialmente modificar as partes iniciais da conexão. MITM é um exemplo de hijacking. Modos para mitigar a ameaça é criptografia end-to-end e MFA.
     - Replay- Attacks: Ao contrário do sequestro, o ataque-replay intercepta uma transmissão válida e repete (ou reenvia) os dados posteriormente, para obter dados ilegalmente. Uma forma de previnir esse ataque é o token de validação única;
-    - 
+    - Dos (Denial of Service) - Tem por objetivo sobrecarregar uma rede/servidor, para deixá-la fora de serviço. Os tipos de DoS são:
+        - Flood attacks: Quando agressores inundam os dispositivos alvos com solicitações, fazendo com que sobrecarreguem seus sistemas. Os tipos de flood attacks são:
+	        - Smurf attack: o agressor "imita" o IP da vítima para enviar um ICMP (Internet Control Message Protocol) para uma rede, onde todos os dispositivos da rede respondem a requisição, travando o dispositivo da vítima;
+    	    - Fraggle attack: parecido com o Smurf, o agressor "imitando" a vítima envia um pacote UDP para os endereços de broadcast do router, fazendo com que os dispositivos da rede retornem o tráfego para o dispositivo da vítima, o deixando indisponível;
+            - SYN flood: é parte de um protocolo que ataca especificamente servers, proxies ou firewalls. O agressor cria um aperto de mão de 3 vias incompleto, inundando os recursos do dispositivo, que aguarda por uma conexão que está meio aberta;
+            - Ataque árvore de Natal: é o envio de vários pacotes com as flags FIN, URG e PSH, onde o sistema de análise de pacote do router demora a analisar todos (grande quantidade), fazendo com que o router sobrecarregue e, em alguns casos, reinicie.
+        - Ping of death: Um ping grande, de 65,345 bytes, é enviado, porém de forma fragmentada. Quando o alvo monta o pacote mal-feito, pode ocorrer uma sobrecarga de buffer ou crashar o sistema;
+        - Teardrop: é o envio de pacotes com cargas modificadas (duplicadas ou aumentadas). Quando o alvo tenta remontar os fragmentos, os pacotes  se sobrepõe, crashando o dispositivo de rede;
+        - DoS permanente: PDoS, é a exploração de vulnerabilidades de um dispositivo, que é usado para substituir o software por um firmware corrompido, levando a inutilização do dispositivo;
+        - Fork Bomb: é a replicação de processos infinitamente, reduzindo a velocidade dos recursos ou crashando o sistema;
+#### Previnindo ataques DoS
+- Método de prevenção
+    - Detecção de anomalia de pacote: Previne seguintes ataques:
+        - Ping of death;
+        - XMAS attack;
+        - Teardrop attacks
+    - Limitação de processos únicos: Previne:
+        - Fork attacks;
+    - Evitar encaminhamento de pacotes:
+        - Smurf attacks;
+        - Fraggle attacks;
+        - Sensores DoS ou analise de comportamento de rede: utilizam sensores e IA para analisar comportamentos e previnir flood attacks em geral.
+#### Melhores práticas
+- Fechar portas desnecessárias, para evitar acessos indesejados;
+- Corrigir vulnerabilidades conhecidas;
+-  Segmentação de rede;
+- Implatação dos princípios Zero-Trust
+
+## Aula 11 - OT (Operational Technology) Security
+- Operational Technology (Tecnologia Operacional) se refere ao hardware e software que controla dispositivos físicos, processos e infraestrutura.
+- A OT Security protege um sistema operacional das ameaças digitais, para garantir a segurança, a confiabilidade e a continuidade dos processos físicos da operação.
+
+#### Comparativo: Tecnologia da Informação (TI) vs. Tecnologia Operacional (TO)
+| Tecnologia da Informação (TI / IT) | Tecnologia Operacional (TO / OT) |
+| :--- | :--- |
+| **Objetivo Principal**<br>Projetada para gerenciar o processamento de informações, armazenamento e transmissão de dados. | **Objetivo Principal**<br>Controlar processos físicos, operar máquinas e gerenciar a infraestrutura. |
+| **Prioridades de Segurança**<br>Prioriza a confidencialidade e a integridade dos dados. | **Prioridades de Segurança**<br>Prioriza a confiabilidade, disponibilidade, estabilidade e segurança física (*safety*). |
+| **Escopo de Atuação**<br>Suporta sistemas de negócios e comunicações corporativas. | **Requisitos de Tráfego**<br>Exige tráfego em tempo real (nenhum atraso é aceito). |
+
+#### Componentes comuns em OT
+- ICS (Industrial control system): usado para monitorar e controlar processos industriais. Os sistemas automatizam operações e provêm controle preciso em equipamentos e processos de produção. Eles incluem os seguintes sistemas:
+    - DCS - sitema usado para controlar processos industriais complexos, como refinamento de petróleo ou produção de produtos químicos, onde muitos loops de controle trabalham simultaneamente;
+    - PLC - são computadores industriais estratificados, que controlam e automam maquinário e processos no chão de fábrica. Eles executam lógicas pré-programadas, baseados em sensores de tempo real;
+    - SCADA - supervisora o controle e aquisição de dados (Supervisory Control And Data) é um sistema que provê controle e monitoramento centralizado de processos industriais espalhados por grandes áreas geográficas, como sistemas de água, linhas de energia e óleodutos.
+#### Ameaças comuns a OT
+- Malware - usado no ambiente industrial para interferir no controle de processos, comprometer a integridade do sistema ou garantir acessos futuros;
+- Ransomware - utilizado para obter vantagens financeiras, em ambientes de OT podem causar paralização da produção, interromper serviços críticos e impactar a continuidade operacional;
+- Nation-State Actors & Advanced Persistent Threats (APTs) - grupos financiados por Estados que tem como alvo infraestruturas críticas, como energia, água ou setores de defesa, para conduzir espionagem, disrupção ou sabotagem;
+- Insider Threat - risco de ator maliciosos ou negligência causados por empregados, parceiros ou fornecedores com acesso aos sistemas de OT. Esse tipo de ameaça são particurlarmente sérias, pois o acesso pode passar pelo perímetro de controle;
+- Ataques a cadeias de suprimentos - comprometem um terceiro confiável, como um fornecedor ou um provedor de software, para se infiltrar no ambiente de OT. Por conta da necessidade de ferramentas externas específicas,esse vetor de ataque apresenta um risco crescente;
+- Unauthorized Remote Access - com a maior interconectividade entre os ambientes de IT e OT, acessos remotos inseguros podem se transformar em um caminho para os agressores acessarem os sistemas de controle industrial.
+#### Dificuldades na segurança da OT
+- Legacy systems - muitos sistemas de OT são de décadas atrás, e não suportam ferramentas modernas de segurança;
+- Zero downtime requirement - patches de segurança são difíceis de serem aplicados sem interromper a produção;
+- Visibilidade limitada - muitos ambientes de OT não possuem ferramentas para monitorar tráfego de rede para detectar anomalias;
+- Protocolos não-criptografados - protocolos industriais como o Modbus e DNP3 não foram criados com a segurança em mente;
+- Arquitetura de rede plana - a falta de segmentação das redes na OT tradicional faz com que o movimento lateral seja fácil;
+#### Benefícios da garantia de uma segurança de OT forte
+- Continuidade operacional - garante a continuidade operacional industrial, pois qualquer parada não planejada por causa de um cyberattack pode ter consequencias graves para serviços, cadeia de produção e comunidades;
+- Monitoramento continuo e visibilidade - detecta e alerta sobre ameaças, identificando dispositivos, testando o tráfego e mapeando a superficie de ataque para gerenciar sistemas e protocolos eficientemente;
+- Sistemas de controle - controles como MFA, segmentação de rede, e sandboxing restringe os acessos não autorizados e contem a ameaça antes que se espalhe;
+- Compliance regulatório - OTs com segurança forte , tem um sistema regulatório a seguir, ajudando as organizações a evitar penalidades, paradas ou dano na reputação;
+- Segurança de equipamento e pessoaiscos de incidentes que podem por em perigo empregados, comunidades e infraestruturas críticas, previnindo mau funcionamento e operação em condições não seguras.
+
+- Estrutura de segurança da OT
+    - Governança e gerenciamento de risco - definir papeis, políticas e estratégia específica e implementar um framework de estrutura de risco;
+    - Rede e controle de acesso:
+        - Segmentar a OT a partir da IT usando firewalls;
+        - Aplicação de menos privilégio dos acessos;
+        - Assegurar e monitorar conexões remotas;
+        - Gerenciar ativos e patchs de atualização com responsabilidade.
+    - Monitoramento e detecção - manter visibilidade continua nas redes da OT;
+    - Resposta e recuperação de incidentes:
+        - facilita a capacidade de restauraçã;
+        - Desenvolvimento e teste dos planos de resposta específicos das OTs.
+    - Preparação da força de trabalho - para reduzir o risco relacionado ao ser-humano, é necessário treinamentos de consciência de segurança.
