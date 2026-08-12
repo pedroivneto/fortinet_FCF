@@ -127,7 +127,7 @@ Os métodos de controle de acesso podem ser mandatórios ou discrecionário, mas
     - Segurança de grupo Microsoft Active Directory;
     - Gerenciador funções em diversos sistemas e dispositivos de segurança;
     - Política de segurança da empresa baseado em sua posição no trabalho.
-- ABAC (Attribute-base access control) - pode considerar vários atributos para determinar se o acesso deveria ser permitido. Garante dinamicamente o acesso e temc consumo intenso de recursos e tempo. De difícil implantação, é necessário um grande tempo para planejar e implementar o motor de regras. Exemplos:
+- ABAC (Attribute-base access control) - pode considerar vários atributos para determinar se o acesso deveria ser permitido. Garante dinamicamente o acesso e tem consumo intenso de recursos e tempo. De difícil implantação, é necessário um grande tempo para planejar e implementar o motor de regras. Exemplos:
     - Checagem envolve multiplos atributos;
     - Microsoft Dynamic Access Control (DAC);
     - Modelos de segurança de banco de dados;
