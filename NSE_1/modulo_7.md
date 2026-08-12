@@ -102,3 +102,126 @@ A sequência de autenticação do protocolo 802.1x:
 O processo é dividido em dois subprocessos: identificação e verificação.
 ### Extensible Authentication Protocol (EAP) Framework
 Não é um método, e sim um framework, que fornece alguns métodos com funções e negociações comuns, chamados EAP methods
+
+## Aula 4 - Autenticação e controle de acesso
+### Controle de acessos é métodos de controle de acesso
+Controle de acesso é habilidade de restringir o acesso a locais físico ou digitais.
+Um método de controle de acesso é o sistema usado para determinar quais recursos o usuário tem permissão para utilizar, baseado na autenticação e regras do sistema.
+### Métodos de controle de acesso
+- MAC (Mandatory Access Control) - não permite que algum participante mude os requerimentos de segurança. Exemplo:
+    - Padlocks (trancas);
+    - SELinux OS.
+- DAC (Discretionary Access Control) - permique que fatores externos alterem restrições de controle de acesso. Exemplo:
+    - Segurança de prédios;
+    - Microsoft User Access Control (UAC);
+    - permissões do sistema de arquivos do Linux.
+Os métodos de controle de acesso podem ser mandatórios ou discrecionário, mas não ambos.
+- LBAC (Lattice-based access control) - Modelo de acesso de controle que garante permissões a locais ou materiais baseado no nível de segurança atribuido, podendo acessar dados e locais do seu nível ou abaixo dele. Exemplos:
+    - Classificação de documento.
+- RSBAC (Rule-set-based access control) - reforça o acesso através de uma lista de regras, e são validadas de cima para baixo, e quando uma correspondência acontece, o acesso é permitido ou negado baseado naquela regra. Normalmente usadoem firewalls. Exemplos:
+    - Conjunto de regras dos roteadores;
+    - iptables;
+    - trancas por tempo das portas de hotel;
+    - crachás de identificação para acesso a áreas restritas.
+- RBAC (Role-based access control) - controla o acesso a informações baseado no papel de cada colaborador, gerenciado por um administrador e  asignado para usuários e dispositivos. Benefício do método é a flexibilidade de garantir acesso a novos usuários ou dispositivos. A disvantagem é o tempo gasto configurando a estrutura de acesso. Exemplos:
+    - Segurança de grupo Microsoft Active Directory;
+    - Gerenciador funções em diversos sistemas e dispositivos de segurança;
+    - Política de segurança da empresa baseado em sua posição no trabalho.
+- ABAC (Attribute-base access control) - pode considerar vários atributos para determinar se o acesso deveria ser permitido. Garante dinamicamente o acesso e temc consumo intenso de recursos e tempo. De difícil implantação, é necessário um grande tempo para planejar e implementar o motor de regras. Exemplos:
+    - Checagem envolve multiplos atributos;
+    - Microsoft Dynamic Access Control (DAC);
+    - Modelos de segurança de banco de dados;
+    - Next-generation firewall policies.
+
+## Aula 5 - Melhores práticas
+### Ciclo de vida do gerenciamento de identidade e acesso
+Ciclo de vida do gerenciamento de identidade e acesso é quando um usuário ou dispositivo tem suas permissões provisionadas, e permanece até o momento de seu desprovisionamento, quando o ciclo reinicia.
+A governança sobre o ciclo de vida possui 5 características:
+- Provisionamento - criação da conta do usuário ou dispositivo e asignação das funções ou grupos;
+- Autenticação - validação da identidade;
+- Autorização - determina se o usuário tem permissões válidas e audita suas conexões;
+- Self-service - serviços que o próprio usuário pode realizar, tais como mudança de senha, atualização de informações, requerer acesso a informações proibidas e reportar atividades suspeitas;
+- Desprovisionamento - a retirada das permissões, regras de controle de acesso, funções e grupos.
+O sistema de governança, normalmente um time, controla os métodos de controle de acesso e políticas e revisa e modifica esses processos.
+### Desafios do controle de acesso
+- Configurar os controles de acesso:
+    - Várias funções, grupos e políticas atraves de múltiplos departamentos e dispositivos;
+    - Complexidade das regreas;
+    - Entendimento das inconsistências do controle de acesso de dispositivos;
+    - Má configuração ou regras não utilizadas podem comprometer a configuração correta.
+-  Consistência:
+    - Exige flexibilidade para criar políticas de controle de acesso apropriadas;
+    - Criar multiplas políticas de controle de acesso e regras através de múltiplas plataformas.
+- Experiência do usuário:
+    - Mudança de senha;
+    - Lidar com senhas expiradas;
+    - Garantir acesso adicional a recursos com facilidade;
+    - Normalmente a fase self-service do ciclo.
+- Auditoria:
+    - Criar uma trilha para autorizações e autenticações;
+    - Lidar com filiais dispersas geograficamente e controlar o acesso aos locais;
+    - Consolidar multiplos tipos de dispositivos e logins.
+### Administração e permissões
+- Administradores e governança:
+    - Controla a postura da segurança e cria políticas de controle de acesso;
+    - Define políticas de escalonamento importante para desastres, contratações e desligamentos;
+    - Comunica as políticas através dos planos e políticas de segurança;
+    - Audita periodicamente as contas de usuários e as políticas de controle de acesso;
+- Separação de deveres:
+    - Mantem a separação entre usuários e administradores com contas e políticas de controle de acesso;
+    - Separa o controle de acesso de diferentes departamentos que precisam ter diferentes requisitos para permitir um controle de acesso mais seguro e granular;
+    - Reforços a nivel de SO usando características de segurança como UAC no Windows e superuser no Linux;
+    - Separação de controle de acesso através de divisões que fazem sentido, como departamentos, hierarquia organizacional ou localização geográfica;
+    - Minimizar sobrecarga operacional, degradação de regras e escalonamento de privilégios.
+- Controle de acesso, criação de política e recertificação:
+    - Criar e documentar a criação de políticas de controle de acesso para o administrador ver o quadro geral;
+    - Revisar periodicamente (pelo menos anualmente) todas as políticas, para verificar se ainda estão relevantes ou precisam ser atualizadas ou deletadas;
+    - Reavaliar as políticas quando uma grande mudança na rede ou infraestrutura acontecer, sem assumir que as políticas existentes irão conseguir lidar com os novos equipamentos ou situações;
+- Educação do usuário:
+    - Conhecimento das políticas de controle de acesso e de segurança da empresa;
+    - Abilidade de criar senhas fortes e usar formulários de mudança;
+    - Abilidade de identificar e reportar atividades suspeitas ou desconfiguração das políticas.
+- Inclusão de usuário, recertificação e exclusão de usuário:
+    - Métodos claros e fáceis de usar para criar perfis de controle de acesso;
+    - Recertificação periódica para garantir que os usuários tem as políticas corretas asignadas;
+    - Políticas compreensivas de exclusão para garantir a remoção de todos os acessos do usuário e deletar contas antigas.
+- Escalonamento e plano de recuperação de desastres:
+    - Publicar planos para situações de recuperação de desastres;
+    - Estragégias claras e de fácil utilização para permitir que os usuários reportem atividades suspeitas e desconfigurações de políticas de acesso.
+
+## Aula 6 - Controle de acesso a rede
+### Network Access Control (NAC)
+É uma aplicação ou máquina virtual que controla o acesso a rede, tem uma visão completa dos perfis de rede e categoriza os dispositivos automaticamente.
+O NAC avalia e classifica da seguinte forma:
+- Usuários;
+- Dispositivos;
+- Localização;
+- Sistema operacional;
+- Outras formas de classificação.
+Muitas soluções NAC tem arquitetura centralizada e implementa o controle de acesso de dispositivos em grandes redes multi-filiais.
+NAC utiliza o padrão IEEE 802.1x para autenticação e autorização, que tem 3 entidades envolvidas:
+- O dispositivo do cliente:
+    - User name e senha;
+    - Certificado digital.
+- O autenticador:
+    - Switch de rede;
+    - Acesso wireless
+- Servidor de autenticação
+
+**Portal Captive** - utilizado especialmente em redes sem fio públicas, como se conectar a rede de um coffee shop, onde antes de obter acesso a rede, você tem que interagir com uma página web que pede para você cumprir algumas tarefas.
+### Desafios para NAC
+- BYOD (Bring your own device / traga seu próprio dispositivo): dispositivos que tentam conectar a rede são pessoais, onde o departamento de segurança não tem controle sobre o que roda nesses dispositivos;
+- IoT (Internet of Things): esses dispositivos transmitem informações de um local ao outro, através da internet, aumentando a superfície de ataque. Dispositivos IoT são tolerados por economizarem tempo e dinheiro.
+### Capacidades atuais do NAC
+As políticas do NAC possuem perfis que são confrontados com as solicitações de acesso.
+Garante acesso a informações sensíveis e a aplicações baseado no que o sistema sabe.
+Um exemplo é a liberação de acesso de uma câmera de segurança IP a um servidor de gravação de vídeo mas não ao servidor financeiro, já que a câmera IP não tem negócios a tratar com o servidor financeiro, redirecionando a requisição a VLAN correta, e o firewall realiza o restante da operação.
+Com isso, se realiza a segmentação da rede por software.
+### A importância do NAC
+- Segurança melhorada - provê uma visão total de todos os dispositivos da empresa:
+    - Melhora a segurança;
+    - Autentica usuários.
+- Economia de custos - gera economia pois é necessário menos recursos de IT;
+- Automação - por conta do aumento de dispositivos, a segurança da informação não consegue autenticar manualmente todos os dispositivos, logo, a automação do NAC oferece uma grande eficiencia em autenticar e autorizar dispositivos;
+- Experiẽncia em IT melhorada - Acesso sem interrupções oferece uma experiência de usuário sem atritos ao se conectar à rede.
+- Controle fácil - É de grande ajuda não somente quando a equipe precisa determinar quais endpoints ou usuários tiveram acesso liberado a rede, mas também no gerenciamento do ciclo de vida, quando dispositivos precisam ser atualizados ou repostos.
