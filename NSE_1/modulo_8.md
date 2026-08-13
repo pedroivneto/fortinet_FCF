@@ -35,3 +35,21 @@ O maior desafio é manter uma conexão segura com a internet/redes, já que são
 - Dividir os dispositivos em grupos por necessidades de segurança e conexão;
 - Empresas devem colocar apenas os dispositivos que precisem conversar com outro na mesma estrutura de rede.
 ## Aula 2 - Técnicas de segurança de endpoints
+- Controles administrativos;
+    - Senhas;
+    - Restrições de usuário;
+    - PoLP (Pricípios de menos privilégios).
+- Proteção local do endpoint:
+    - OS e startup hardening;
+    - Gerenciamento de boot;
+    - Criptografia de segurança de disco;
+    - Prevenção de perca de dados (DLP - Data Loss Prevention).
+- Manutenção do endpoint:
+    - Auto-atualização e patching;
+    - Checagem de políticas;
+    - Backups.
+- Monitoramento do endpoint:
+    - EPP - Plataforma de proteção do endpoint;
+    - IDS - Sistema de detecção de intrusão;
+    - EDR - Detecção e resposta do endpoint.
+
