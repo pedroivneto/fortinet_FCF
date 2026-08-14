@@ -62,3 +62,9 @@ Durante o ciclo de vida dos dados, eles estão em constante movimento, nos segui
 - Resiliência dos dados: importante para a continuidade e disponibilidade dos dados na empresa. Backups regulares permitem que os dados sempre estejam disponíveis e acessíveis;
 - Destruição: deve ser feito com o procedimento correto, como erasure (apagamento, destriução), que sobrescreve os dados com informações sem importância ou padrões pseudo-aleatórios para destriur completamente o arquivo;
 - Prevenção de perda de dados: Permite a detecção e prevenção de aberturas para ataque, roubo ou destruição indesejada de dados.
+### Boas práticas
+- DLP (Data Loss Prevention)
+    - Identifica informações sensíveis;
+    - Previne compatilhamento acidental de dados;
+    - Audita e monitora movimentação de dados;
+    - Educa os usuários sobre conformidades.
