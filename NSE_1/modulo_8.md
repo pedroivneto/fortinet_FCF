@@ -53,3 +53,46 @@ O maior desafio é manter uma conexão segura com a internet/redes, já que são
     - IDS - Sistema de detecção de intrusão;
     - EDR - Detecção e resposta do endpoint.
 
+## Aula 3 - Monitoramento de endpoints
+Endurecendo a segurança do endpoint:
+- Controles administrativos:
+    - Senhas;
+    - Restrições de usuários;
+    - PoLP (Princípio de menor privilágio).
+- Mantenção de endpoints:
+    - Patching e atualizações automáticas;
+    - Checagem de políticas;
+    - Backups.
+- Proteção local de endlpoints:
+    - Endurecimento do sistema operacional e inicialização;
+    - Criptografia de disco rígido (HD);
+    - Prevenção de perda de dados (DLP).
+- Monitoramento de endpoints:
+    - EPP (Plataforma de Proteção Endpoint);
+    - IDS (Sistema de detecção de intrusão);
+    - EDR (Detecão e resposta de endpoints).
+### EPP
+Plataformas de proteção contínua a dispositivos finais de rede. Podem fazer:
+- Verificações de versões de sofware e firmware;
+- Escanear sistemas locais por vírus e malware;
+- Fortalecer a prevenção de perca de dados e outras políticas definidas pela empresa.
+Os EEPs são uma medida de defesa contra ataques maliciosos, ajudam os administradores a manter os softwares uniformemente atualizados por toda a empresa e permite um monitoramento e visibilidade básica do sistema.
+### EDR
+Está constantemente verificando o sistema para detecção de IOC (indocador de comprometimento) - se o sistema detecta alguma conexão inapropriada, arquivo suspeito ou comportamento estranho, o sistema bloqueia a ação e emite um aviso. Isso ajuda a detectar e parar ataques como ransomware e ataques zero-day.
+- Utiliza IA e uma grande base de dados para prever e reconhecer arquivos e programas suspeitos;
+- Envia alertas para outros endpoints conectados para que eles possam bloquear atividades suspeitas, antes que eles possam ser executados, gerando uma resposta imediata a ataques de zero-day e outros ataques não definidos.
+- Possui ferramentas que ajudam a reunir dados de novas ameaças. Sistemas suspeitos são colocados em quarentena, para evitar infecções.
+### Assegurando dispositivos desconhecidos e BYODs
+Um dos maiores desafios é conectar um dispositivo desconhecido em uma rede estabelecida.
+Além de sistemas de monitoramento instalados préviamente, é importante conectá-los em uma rede isolada, para que eles possam ser avaliados e identificados.
+Após conectado em uma rede isolada, o dispositivo para por duas etapas:
+- Registro de informações:
+    - Hostname (nome do dispositivo);
+    - Serial number;
+    - MAC/ static IP.
+- Instalação de um software de segurança.
+Desabilitando o acesso de dispositivos desconhecidos:
+- Usuários desconhecidos são forçados a se registrar;
+- Previne agressores de tentar inserir seus próprios dispositivos na rede.
+
+
