@@ -68,3 +68,83 @@ Durante o ciclo de vida dos dados, eles estão em constante movimento, nos segui
     - Previne compatilhamento acidental de dados;
     - Audita e monitora movimentação de dados;
     - Educa os usuários sobre conformidades.
+
+## Aula 2 - Privacidade dos dados
+### Privacidade dos dados
+Se refere à devida utilização de dados pessoais e outros dados sensíveis, onde:
+* O público:
+  * Tem a expectativa da privacidade dos seus dados;
+  * O direito de ter o controle sobre os seus próprios dados;
+  * As empresas tem a obrigação de manter a privacidade dos dados;
+* As empresas:
+  * Informar o processo de coleta, compartilhamento, arquivamento e exclusão de dados sensíveis;
+  * Manter níveis aceitáveis de risco;
+  * Cumprimento com as regulações e leis de proteção dos dados.
+### A importância da privacidade dos dados
+É importante para as empresas manterem a privacidade dos dados pois:
+* Os dados são ativos de extrema importância;
+* Controle individual sobre os dados;
+* As empresas devem ser transparentes sobre a forma em que eles gerenciam seus dados;
+* Governos reconhecem direitos individuais dos dados;
+* Atualmente, a coleta de dados se torna fácil com os avanços tecnológicos;
+* O não cumprimento de regras podem gerar muitas consequencias, como processos jurídicos e perca de confiança no mercado.
+### Funções das empresas na privacidade dos dados
+Pesquisas proprietárias, recursos de RH e informações financeiras devem ser protegidas de exposição:
+* Identificando os dados sensíveis;
+* Identificando as funções autorizadas, usuários e políticas;
+* Coletando e reportando sobre dados comprometidos;
+* Desenvolvendo procedimentos de resposta para invasões;
+* Implementando medidas de criptografia para a obfuscação dos dados.
+As informações devem ter níveis de classificação:
+* Restrito: um tipo altamente sensível de dado, e deve ser limitado e seu uso deve ser limitado a consulta que são estremamente necessários ao desempenho de suas funções;
+* Confidencial: é um dado a nível de equipe, e seu uso deve ser estritamente dentro do negócio;
+* Interno: é um dado a nível de empresa e deve ser protegido com controle limitado;
+* Público: é um dado que pode ser amplamente compartilhado com qualquer pessoa.
+As políticas pertencentes a classificação e uso dos dados devem ser seguidas.
+### Leis e regulações
+As leis e regulações de privacidade de dados garantem que indivíduos tenham controle sobre seus dados.
+Algumas leis e regulações vigentes:
+* GPDR (General Data protection Regulation);
+* ISO 27701 - padrão internacional para gerenciamento e privacidade de dados;
+* NIST (SP 800-53) - provê um catálogo de segurança e privacidade para proteção e controle contra riscos de privacidade;
+* SOC 2 (System of Organizations Control) - requerimentos para empresas que fornecem SaaS (serviços de nuvem);
+* PIPEDA (Personal Information and Eletronic Documents Act) - lei canadense de privacidade para o setor privado;
+* CCPA
+* HIPAA
+* PCI DSS
+
+## Aula 3 - Segurança de e-mail gateway
+Spam: Mensagens não solicitadas e irrelevantes que são enviadas para vários destinatários;
+Phishing: Ataque de engenharia social que usa o e-mail como caminho e tem como alvo um público amplo e indiscrimidado de pessoas.
+Alguns dados sobre o phishing:
+- em 2004, 176 ataques de phising foram identificados;
+- em 2012, o número de ataques subiu para 28.000;
+- Em 2022, para 500 milhões de ataques;
+- A média do custo por invasão é de 4.35 milhões de dólares;
+### O que é Secure Email Gateway (SEG)
+É uma solução tecnológica criada para proteger empresas de e-mails que podem ser ameaças e garante a segurança e privacidade das comunicações por e-mail.
+Possui algumas características:
+- Filtro de conteúdo: Controla e gerencia os tipo de conteúdo que pode ser acessados e compartilhados na rede, e inclui:
+  - Correspondência de palavre chave;
+  - Expressões regulares;
+  - Checagem de pacotes profunda (deep package inspections);
+  - Analise de contexto.
+- DLP (Data Loss Prevention): Previne o vazamento não autorizado ou acidental de informações sensíveis ou confidenciais de uma empresa
+- Filtros spam: Gerencia o recebimento de e-mails e elimina os que contem os potencialmente perigosos, reduzindo a quantidade de spam na caixa de entrada. Os spams possuem:
+    - Características:
+      - Endereços de remetentes suspeitos;
+      - Uso excessivo de palavras-chave;
+      - Padrões de spam conhecidos;
+      - Endereços de IP com reputação ruim.
+    - Tecnologias de filtros de spam:
+      - Bayesian filters: um filtro estatístico, baseado na teoria Bayesiana, lidando com probabilidades e incertezas;
+      - Lista de negados: blocklist, uma lista de itens ou entidades que são proibidas ou negando acesso a determinados sistemas específicos;
+      - Lista de permitidos: o contrário da deny list;
+      - Machine learning algorithms: algorítimos de IA criados para reconhecerem padrões, realizar inferências para aprender e realizar a filtragem.
+- Authentication and identity verification: autentica e verifica a identidade para previnir a cópia do e-mail ou a imitação do mesmo;
+- Malware: escaneia os anexos dos e-mails e links para previnit conteúdos potencialmente mal intencionados de chegar a caixa de inbox;
+- Criptografia: criptografa as mensagens, ou até mesmo assina digitalmente, para assegurar a confidencialidade e não-repudiação da mensagem.
+### Sender Policy Framework
+- SPF verifica o endereço de IP do rementente, para previnir o roubo do endereço de e-mail.
+- Domain Keys Identified Mail (DKIM) - Uma tecnologia de autenticação e anti-phishing que verifica a autenticidade de mensagens e legitimidade dos remetentes.
+- Domain-based Message Authentication, Reporting and Conformance (DMARC) - Um protocolo de autenticação e framework usado para aumentar a segurança na comunicação por e-mail, permitindo os e-mails dos remetentes especificarem suas políticas e instruções de como os destinatários lidarem no caso de falha na autenticação.
