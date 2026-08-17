@@ -4,6 +4,10 @@
 # Table of contents
 
 * [Introdução](README.md)
-* [Módulo 1 - Conceitos Fortigate](modulo1/conceitos.md)
-* [Módulo 2 - Políticas de Firewall](modulo2/politicas.md)
-* [Comandos CLI Úteis](cli/comandos.md)
+* [Módulo 1 - Introduction to Cybersecurity](NSE_1/modulo_1.md)
+* [Módulo 2 - The threat landscape](NSE_1/modulo_2.md)
+* [Módulo 3 - Social engineering](NSE_1/modulo_3.md)
+* [Módulo 4 - Malware](NSE_1/modulo_4.md)
+* [Módulo 5 - Cryptography and the Public Key](NSE_1/modulo_5.md)
+* [Módulo 6 - Secure Network](NSE_1/modulo_6.md)
+* [Módulo 3 - Social engineering](NSE_1/modulo_3.md)
