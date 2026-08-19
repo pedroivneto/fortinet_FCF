@@ -197,5 +197,19 @@ Hardening:
         - Criar uma lista de permissão, com os sites que são permitidos abrir pop-ups.
     - Active content: Os empregados devem tratar os active contents com precaução:
         - Active contents são pequenos programas que aplicações usam para performar funções específicas, com mostrar um calendário ou tocar um vídeo.
-
-
+Em nível corporativo, o proxy é utilizado para filtrar os sites que podem ou não ser acessados pelos empregados, aumentando a segurança e melhorando a velocidade de acesso (largura de banda)
+Um arquivo de configuração pode ser criado, para automaticamente instalar atualizações e patches de segurança.
+Existem recomendações de segurança para os usuários:
+- Usar um software de antivírus atualizado para proteção contra malwares;
+- Usar uma aplicação de lista de aprovados;
+- Deletar ou desativar aplicações que não são mais utilizadas, para evitar que hackers os utilizem como brechas de backdoor, mitigando o risco de invasões;
+- Treinamentos dos usuários para conscientização sobre segurança, os treinando para:
+    - Criar senhas seguras;
+    - Entender como funcionam ataques de engenharia social;
+    - Aplicar ações apropriadas.
+### Benefícios do hardening
+Ao utilizar o hardening na empresa, você:
+- Ajuda a empresa a aumentar o nível de confiabilidade;
+- Melhora a performance das aplicações;
+Alto custo e esforço, porém alto retorno;
+- Provê um ambiente seguro.
