@@ -148,3 +148,54 @@ Possui algumas características:
 - SPF verifica o endereço de IP do rementente, para previnir o roubo do endereço de e-mail.
 - Domain Keys Identified Mail (DKIM) - Uma tecnologia de autenticação e anti-phishing que verifica a autenticidade de mensagens e legitimidade dos remetentes.
 - Domain-based Message Authentication, Reporting and Conformance (DMARC) - Um protocolo de autenticação e framework usado para aumentar a segurança na comunicação por e-mail, permitindo os e-mails dos remetentes especificarem suas políticas e instruções de como os destinatários lidarem no caso de falha na autenticação.
+
+## Aula 4 - WAF - Web Application Firewall
+WAF é uma aplicação ou software que monitora os tráfegos HTTP(S) e pode bloquear tráfegos maliciosos de de e/ou para uma aplicação web.
+Aplicações WAF podem parar ataques que se originam da web, que podem ser:
+* SQL Injection;
+* File inclusion;
+* Cross-site scripting;
+* Desconfiguração de segurança.
+## Aula 5 - Filtros de conteúdo
+Um processo para triar ou restringir o acesso a e-mails, páginas da web, executáveis e outros itens suspeitos ou indesejados.
+É um processo incluso em firewalls, projetados para bloquear conteúdos:
+- Perigosos;
+- Ilegais;
+- Inapropriados.
+### Tipos de filtros de conteúdo
+- Filtros de pesquisa web: Classifica o conteúdo de imagem ou texto em: Estrito, moderado ou desligado. Após a configuração de restrição, uma IA irá analisar o conteúdo da pesquisa e trará o retorno de acordo com a configuração do filtro, podendo classificar os resultados como:
+    - Seguro
+    - Moderado;
+    - Inapropriado;
+    - Rejeitado.
+- Filtros de e-mails: Lê o cabeçalho do e-mail e compara com o RBLs (lista de nomes de domínios, servidores de emails ou endereços de IP), para averiguar se o e-mail é seguro. Além dessa verificação, o corpo do email é verificado, como também os anexos, procurando por padrões que possam indicar um potencial ataque.
+- Filtro baseado em DNS: Verifica se o site que o usuário está tentando se conectar está em um blocklist. Caso esteja nesse blocklist, o servidor DNS retorna uma mensagem de "website blocked"
+- Filtros web: Funciona da mesma forma como filtro baseado e DNS, porém com uma função adicional, que é a categorização. Como exemplo, uma escola pode manter uma lista de URLs que serão bloqueadas para o acesso indevido de crianças.
+### Benefícios dos filtros de conteúdo
+- Bloqueia acesso a sites conhecidos por conter malwares e protege os dados e usuarios de atividades maléficas.
+- Identifica phishing ou exploit kit (código projetado para explorar vulnerabilidades de sites e navegadores, através de extensões e plugins), bloqueando o acesso antes do acionamento do download do malware.
+- Aumenta a banda de internet e melhora as conexões para todos os empregados.
+- Pode aumentar a produtividade do empregado.
+
+## Aula 6 - Aplicando técnicas de endurecimento (hardening)
+Hardening:
+- Definido por vários padrões e regulamentações de cybersecurity.
+- Minimalização de vulnerabilidades e redução da superfície de ataque.
+- Proteção da integridade da aplicação e salvaguarda dos dados sensíveis.
+### Técnicas para aplicação de hardening
+- Uso específico de ferramentas aprovadas pela empresa
+- Treinamento dos empregados sobre comportamentos seguros no ambiente de trabalho;.
+- Tipos de cuidados:
+    - Web browser: A empresa deve recomendar um navegador estável e os empregados são responsáveis pela instalação do navegador aprovado;
+    - Cookies: Os usuários devem:
+        - Limpar os cookies;
+        - Permitir apenas os cookies requisitados do trabalho;
+        - Configurar opções de segurança avançados de cookies.
+    - Add-ons: Devem apenas instalar add-ons oficiais e que forem aprovados pela empresa;
+    - Pop-up blocker: Pop-ups podem conter malware, logo os empregados devem:
+        - Ativar o bloqueador de pop-ups;
+        - Criar uma lista de permissão, com os sites que são permitidos abrir pop-ups.
+    - Active content: Os empregados devem tratar os active contents com precaução:
+        - Active contents são pequenos programas que aplicações usam para performar funções específicas, com mostrar um calendário ou tocar um vídeo.
+
+
