@@ -13,3 +13,4 @@
 * [Módulo 7 - Authorization and Access Control](NSE_1/modulo_7.md)
 * [Módulo 8 - Endpoint Security](NSE_1/modulo_8.md)
 * [Módulo 9 - Secure Data and Application](NSE_1/modulo_9.md)
+* [Módulo 10 - Segurança na nuvem e virtualização](NSE_1/modulo_10.md)

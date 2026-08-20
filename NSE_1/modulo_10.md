@@ -84,3 +84,31 @@ Como práticas adicionais, temos:
         - Degaussing: modifica o campo magnético do HD para destruir ou embaralhar os dados, que ficam irrecuperáveis e destrói o HD;
         - Cripto-erasing: em um armazenamento criptografado, esse método remove a chave existente, pondo outra no lugar, e todos os dados criptografados que usavam a chave antiga é renderizado como irrecuperável,mas o dispositivo ainda pode ser usado;
         - Sheredding: uma máquina industrial que destrói fisicamente o drive, não deixando possibilidade de remontagem dos dados.
+## Aula 5 - Ameaças comuns a nuvem
+Ameaças da nuvem:
+- Autenticação e autorização: Garantir métodos de autenticação modernos para proteger dados sensíveis e máquinas virtuais;
+- VM creep: Uso frequente de auditoria em Vms e dados baseados em nuvem, para diminuir os rastros de uso e assim reduzir a superfície de ataque;
+- Armazenamento desconfigurado: Armazenamentos em nuvem tem regras, autenticações e lista de controle de acesso, que deve ter uma segurança robusta e os conteiners, discos, buckets e blobs devem ser configurados com o intuito de previnir a perca de dados e o excess de uso de recursos;
+- DLP: Leva em consideração como as empresas de gerenciamento de cloud lidam com o armazenamento de dados, direitos e propriedade;
+- Conectividade: Sempre utilizar protocolos seguros de conectividade, como HTTPS ou SSH, criptografar e assegurar os dados que estão sendo transferidos entre a nuvem e as aplicações e armazenamentos, utilizando esses protocolos seguros;
+- Improper logging and monitoring: Manter um log de segurança, sendo capaz de centralizar essa coleção de dados em um SIEM (Security Information and Event Management) ou outro ponto de log, ajuda a manter a segurança e ajuda a resposta rápida a ameaças que afetem o ambiente de nuvem;
+- Direitos e propriedades a dados: É um assunto complicado, pois as propriedades sobre os dados dependem de fatores como:
+    - País onde o serviço de nuvem é usado;
+    - País onde a empresa provedora está alocada;
+    - Assinatura do SLA (Service Level Agreement).
+### Autenticação e autorização
+Opções de autenticação e autorização como OAuth e SAML dão suporte a interoperabilidade entre várias companhias e serviços e segurança dos dispositivos, podendo simplificar a administração que suporta a autenticação de banco de dados para ambas as opções, local e nuvem.
+### Armazenamento de dados e segurança
+É um dos recursos mais expostos a riscos na nuvem. Para reforçar a segurança, existe um conjunto único de regras e políticas reforçadas por:
+- políticas de serviço local do provedor;
+- sistema de IAM (Identity and Access Managemant);
+- lista de controle de acesso ao armazenamento (ACLs);
+- serviço de autenticação centralizado;
+- princípio de menor privilégio.
+A auditoria e remoção de qualquer VM, armazenamento e outros serviços na nuvem que aumentam com o tempo e não são removidos ou deletados após o uso ajuda a:
+- Reduzir o número de recursos em uso da nuvem;
+- Previne que sistemas não deletados e velhos se tornem ameaças a segurança em potencial;
+- Previnir um ponto de ataque inicial de hacker maliciosos.
+Os dispositvos de segurança da nuvem, como CNP (Cloud Native Protection) e CNAP (Cloud Native Application Protection) possuem mecanismos como DLP, Auditing e Risk Assessment.
+
+## Aula 6 - 
