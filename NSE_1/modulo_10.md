@@ -111,4 +111,16 @@ A auditoria e remoção de qualquer VM, armazenamento e outros serviços na nuve
 - Previnir um ponto de ataque inicial de hacker maliciosos.
 Os dispositvos de segurança da nuvem, como CNP (Cloud Native Protection) e CNAP (Cloud Native Application Protection) possuem mecanismos como DLP, Auditing e Risk Assessment.
 
-## Aula 6 - 
+## Aula 6 - CNP-CNAP (Ferramenta de segurança na nuvem)
+### SECaaS
+Permite que um único fornecedor forneça multiplos dispositivos e ferramentas de segurança, todas integradas em uma plataforma CNP.
+Disaster recovery, virus scanning, intrusion protection e authentication são algumas das ferramentas disponíveis.
+### SASE (Secure Access Service Edge)
+Tem o objetivo de se extender além das simples conexões entre os escritórios e as aplicações em nuvem.
+O SASE combina conectividade segura de SD-WAN (software defined WAN) com uma borda de serviço de segurança (security service edge) contendo produtos SECaaS (Security as a Service) para validar e proteger conexões com aplicações hospedadas.
+
+## Aula 7 - Securing the Cloud
+### Protegendo servidores na nuvem
+Para a proteção dos servidores em nuvem, podem ser usados WAF (Web Application Firewall) ou CNF (Cloud Native Firewall) para separar sua rede virtual da rede da nuvem, e assim aplicar suas políticas, regras, realizar inspeção de tráfego e regras e gerenciamento de autenticações, DLP (Data Loss Prevention) e sistema de detecção de intrusão (IDS).
+Dentro dessa rede de proteção, pode-se ter scanners DLP, motores de antivírus e sandboxes, realizando pré-checagens antes das solicitações chegarem aos servidores.
+A replicação dos métodos de segurança para outros serviços de nuvem se torna fácil, ou adicionar outra camada de segurança com o mínimo de esforço de lançamento e custos administrativos.
